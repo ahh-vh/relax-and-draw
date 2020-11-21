@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+
+
+.tools {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.colors {
+    display: flex;
+    margin-left: 20px;
+}
+
+.color{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.pens {
+    display: flex;
+    align-items: center;
+}
+.small {
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    border-radius: 50px;
+    margin-right: 4px;
+}
+.medium{
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50px;
+    margin-right: 4px;
+}
+.large{
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 50px;
+    margin-right: 4px;
+}
+.red { background-color: red; }
+.blue{ background-color: blue; }
+.green{ background-color: green; }
+.black{ background-color: black; }
+.orange{ background-color: orange; }
+
+.clear {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.activeColor, .activePen {
+    border: 2px solid rgb(66, 235, 66);
+}

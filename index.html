@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="tools">
+            <div class="pens">
+                <div class="pen small activePen"></div>
+                <div class="pen medium"></div>
+                <div class="pen large"></div>
+            </div>
+            <div class="colors">
+                <div class="color blue activeColor"></div>
+                <div class="color orange"></div>
+                <div class="color black"></div>
+                <div class="color red"></div>
+                <div class="color green"></div>
+            </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="clear" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </div>
+        <canvas id="canvas"></canvas>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
