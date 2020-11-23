@@ -2,6 +2,7 @@ window.addEventListener('load', () => {
     const canvas = document.querySelector("#canvas")
     const context = canvas.getContext('2d')
     const clearBtn = document.querySelector('.clear')
+    const eraserBtn = document.querySelector('.eraser')
     const pens = document.querySelectorAll('.pen')
     const colors = document.querySelectorAll('.color')
     const toolsHeight = document.querySelector('.tools').clientHeight
@@ -26,7 +27,7 @@ window.addEventListener('load', () => {
         if(!painting) return;
         context.lineWidth = penSize;
         context.lineCap = 'round'
-        context.strokeStyle = penColor
+        context.strokeStyle = eraserBtn.classList.contains('activePen') ? 'white' : penColor
 
         context.lineTo(e.clientX, e.clientY - toolsHeight)
         context.stroke()
@@ -36,6 +37,10 @@ window.addEventListener('load', () => {
 
     const clear = () => {
         context.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    const handleEraserClick = (e) => {
+        eraserBtn.classList.toggle('activePen')
     }
 
 
@@ -56,6 +61,8 @@ window.addEventListener('load', () => {
     }
 
     const handleColorChange = (e) => {
+        eraserBtn.classList.remove('activePen')
+        
         document.querySelector('.activeColor').classList.remove('activeColor')
         penColor = e.target.classList[1]
         e.target.classList.add('activeColor')
@@ -65,6 +72,7 @@ window.addEventListener('load', () => {
     canvas.addEventListener("mouseup", endDraw)
     canvas.addEventListener("mousemove", draw)
     clearBtn.addEventListener('click', clear)
+    eraserBtn.addEventListener('click', handleEraserClick)
 
     pens.forEach(pen => {
         pen.addEventListener('click', handlePenChange)
