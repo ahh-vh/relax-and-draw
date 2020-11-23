@@ -57,7 +57,7 @@ body {
 .black{ background-color: black; }
 .orange{ background-color: orange; }
 
-.clear {
+.clear, .eraser {
     width: 30px;
     height: 30px;
     cursor: pointer;
